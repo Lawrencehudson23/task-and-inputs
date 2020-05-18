@@ -1,0 +1,19 @@
+<div class="row" *ngFor="let task of tasks">
+  <div class="col-xs-12">
+    <h3>Task Details Component</h3>
+    <h4>Task Title: {{ task.title }}</h4>
+    <button
+      class="btn btn-warning"
+      (click)="clickHandler()"
+      *ngIf="task.complete; else inComplete"
+    >
+      Click to mark incomplete
+    </button>
+    <ng-template #inComplete
+      ><button class="btn btn-primary" click="clickHandler(task)">
+        Click to Complete
+      </button></ng-template
+    >
+    <p>Incomplete</p>
+  </div>
+</div>
